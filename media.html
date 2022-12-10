@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>krypton</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/css/bulma-accordion.min.css">
+    <link rel="stylesheet" href="https://cdn.cryptofonts.com/1.4.0/cryptofont.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+     
+
+/******************/
+.dropdown-trigger {
+  border: 1px solid #1c004c;
+  padding: 1.2em;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: sans-serif;
+  /* background-color: #1c004c; */
+  color: #fff;
+  height: 40px;
+  width: 270px;
+  /* padding: 0 40px 0 10px; */
+}
+.dropdown-trigger:hover {
+  cursor:pointer;
+}
+.dropdown-trigger::after {
+  content: "\25BD"; 
+  color:rgba(94,147,255,.9);
+  padding-left:9em;
+  vertical-align: middle;
+}
+.dropdown-items {
+  /* box-shadow: 1px 1px 5px #ccc; */
+  display: none;
+  /* border: none; */
+  border-radius:1px;
+  left: 0;
+  position: absolute;
+  top: 2em;
+  z-index: 1000;
+  text-align: left;
+  line-height:1.5em;
+  padding: 0;
+}
+.dropdown-item {
+  padding:.5em 2em;
+  background-color: #1c004c;
+  border-top: 1px solid #250066;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: sans-serif;
+  width: 270px;
+  height: 40px;
+  
+}
+/* .dropdown-divider {
+  border: 1px solid #eee;
+} */
+.dropdown-item:hover {
+  background:linear-gradient(to right, #7F00FF, #3f00fc) !important;
+}
+.dropdown-items.is-open {
+  display: block;
+  min-width:10em;
+}
+    </style>
+  
+</head>
+<body class="color1">
+ 
+    <!-- start navbar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <img class="rotateing" src="assets/krypton.svg" width="36" height="36">
+            <p class="has-text-white is-size-5 is-uppercase has-text-weight-bold">krypton</p>
+          </a>
+      
+          <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu font-size1 navbar-second">
+          <div class="navbar-end">
+            <a class="navbar-item has-text-white" href="index.html">
+              TOKEN
+            </a>
+      
+            <a class="navbar-item has-text-white">
+              ICO
+            </a>
+
+            <a class="navbar-item has-text-white">
+                ROADMAP
+            </a>
+            <a class="navbar-item has-text-white" href="media.html">
+                MEDIA
+            </a>
+            <a class="navbar-item has-text-white">
+                <span class="icon-text">
+                    <span class="icon">
+                      <img src="assets/contact/telegram.svg" alt="telegram" width="13" height="13">
+                    </span>
+                    <span>TELEGRAM</span>
+                  </span>
+            </a>
+            <div class="navbar-item nav-button button1 gradient1 m-3">
+                <a class="button is-light gradient has-text-white gradient1">
+                  REGISTER
+                </a>
+            </div>
+          </div>
+        </div>
+    </div>
+      </nav>
+    <!-- end navbar -->
+    <!-- start news-->
+    <section class="exchange media media-page color1" style="padding: 48px;">
+      <div class="container">
+        <div class="columns is-2-desktop is-vcentered ">
+          <div class="column is-5 is-offset-1 p-3">
+            <!-- <div class="is-flex is-flex-direction-row"> -->
+              <h1 class="title has-text-weight-bold has-text-white is-family-sans-serif is-light is-1 media-line pb-4" style="margin:0 0 24px 0;">News & Media</h1>
+            <!-- </div> -->
+              <h2 class="subtitle is-light is-6 has-text-white is-family-sans-serif is-thin" style="opacity: 0.8; font-weight: 300;">Cryptocurrency brought to the next level. Join our ICO for supercharged rates.</h2>
+      
+          </div>
+          <div class="column">
+              <img src="assets/media.svg" alt="exchangeI" width="564" height="426">
+          </div>
+          </div>
+<div class="columns is-flex is-flex-direction-row">
+  <div class="column is-9">
+    <div id="template">
+          <div class="columns is-vcentered is-flex is-flex-direction-column" v-for="item in listItems">
+              <div class="column "  v-for="user in listUsersItems">
+                  <div class="post-section is-flex is-flex-direction-row columns is-vcentered">
+                    <div class="column is-4 is-text-centered">
+                    <div class="post has-text-centered">
+                      <!-- <div class="poster-img"> 176 -->
+                        <img src="assets/media/post4.svg" alt="post1"  width="247" height="155" style="margin: 0 auto;">
+                      <!-- </div> -->
+                    </div>
+                   </div>
+                    <!-- <div class="column is-8"> -->
+                      <div class="column is-5"  style="width: 564px;">
+                      <div class="poster-info">
+                       <div class="poster-info-section1 is-flex is-flex-direction-row">  
+                         <div class="poster-info-title-section1 has-text-white has-text-weight-medium">
+                          <p style="font-size: 15px;" >{{item.title}}</p>
+                         </div>
+                         <div class="poster-info-title-section2 has-text-white has-text-weight-medium">
+                          <span style="font-size: 12px; margin: 0 0 0 20px;">02.06.2022</span>
+                         </div>
+                      </div>
+                      <div class="poster-info-section2">
+                        <p class="is-family-sans-serif" style="font-size:14px; margin:0 0 14px 0; color:rgba(94,147,255,.9);">
+                          {{item.body}}
+                        </p>
+                      </div>
+                      <div class="poster-info-section3  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="height: 32px; width:523px">
+                        <div class="poster-info-section3-img  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center">
+                          <div class="post-img">
+                            <!-- v-for="photo in  listPhotoItems" -->
+                          <img src="assets/person/john.jpg" alt="person" width="32" height="32" style="border-radius:100%;">
+                        </div>
+                        <div class="post-info">
+                          <p class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px"> {{user.name}}</p>
+                          <p  class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px;">in <span class="is-family-sans-serif" style="font-size: 12px;color:#00FF99">Feature</span></p>
+                        </div>
+                        </div>
+                        <div class="poster-info-section3-info is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin-left: 200px;">
+                          <div class="comments is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="message-circle"></i>
+                            <span>0</span>
+                          </div>
+                          <div class="likes is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="heart"></i>
+                            <span>39</span>
+                          </div>
+                     
+
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                 </div>
+                  </div>
+            </div>
+            <!-- <div class="columns is-vcentered is-flex is-flex-direction-column">
+              <div class="column ">
+                  <div class="post-section is-flex is-flex-direction-row columns is-vcentered">
+                    <div class="column is-4 is-text-centered">
+                    <div class="post has-text-centered">
+                  
+                        <img src="assets/post1.svg" alt="post1"  width="247" height="155" style="margin: 0 auto;">
+                     
+                    </div>
+                   </div>
+                  
+                      <div class="column is-5" style="width: 564px;">
+                      <div class="poster-info">
+                       <div class="poster-info-section1 is-flex is-flex-direction-row">  
+                         <div class="poster-info-title-section1 has-text-white has-text-weight-medium">
+                          <p style="font-size: 19px;">Blockchain For Dummies</p>
+                         </div>
+                         <div class="poster-info-title-section2 has-text-white has-text-weight-medium">
+                          <span style="font-size: 12px; margin: 0 0 0 20px;">27.05.2021</span>
+                         </div>
+                      </div>
+                      <div class="poster-info-section2">
+                        <p class="is-family-sans-serif" style="font-size:14px; margin:0 0 14px 0; color:rgba(94,147,255,.9);">
+                          Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır
+                          metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının
+                          bir hurufat numune kitabı...
+                        </p>
+                      </div>
+                      <div class="poster-info-section3  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="height: 32px; width:523px">
+                        <div class="poster-info-section3-img  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center">
+                          <div class="post-img">
+                          <img src="assets/person/john.jpg" alt="person" width="32" height="32" style="border-radius:100%;">
+                        </div>
+                        <div class="post-info">
+                          <p class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px">by John Cambell</p>
+                          <p  class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px;">in <span class="is-family-sans-serif" style="font-size: 12px;color:#00FF99">Blockchain</span></p>
+                        </div>
+                        </div>
+                        <div class="poster-info-section3-info is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin-left: 200px;">
+                          <div class="comments is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="message-circle"></i>
+                            <span>3</span>
+                          </div>
+                          <div class="likes is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="heart"></i>
+                            <span>9</span>
+                          </div>
+                    
+
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                 </div>
+                  </div>
+            </div>
+            <div class="columns is-vcentered is-flex is-flex-direction-column">
+              <div class="column ">
+                  <div class="post-section is-flex is-flex-direction-row columns is-vcentered">
+                    <div class="column is-4 is-text-centered">
+                    <div class="post has-text-centered">
+                     
+                        <img src="assets/post1.svg" alt="post1"  width="247" height="155" style="margin: 0 auto;">
+                     
+                    </div>
+                   </div>
+                   
+                      <div class="column is-5" style="width: 564px;">
+                      <div class="poster-info">
+                       <div class="poster-info-section1 is-flex is-flex-direction-row">  
+                         <div class="poster-info-title-section1 has-text-white has-text-weight-medium">
+                          <p style="font-size: 19px;">Featured on Bit It</p>
+                         </div>
+                         <div class="poster-info-title-section2 has-text-white has-text-weight-medium">
+                          <span style="font-size: 12px; margin: 0 0 0 20px;">23.04.2022</span>
+                         </div>
+                      </div>
+                      <div class="poster-info-section2">
+                        <p class="is-family-sans-serif" style="font-size:14px; margin:0 0 14px 0; color:rgba(94,147,255,.9);">
+                          Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır
+                          metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının
+                          bir hurufat numune kitabı...
+                        </p>
+                      </div>
+                      <div class="poster-info-section3  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="height: 32px; width:523px">
+                        <div class="poster-info-section3-img  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center">
+                          <div class="post-img">
+                          <img src="assets/person/helen.jpg" alt="person" width="32" height="32" style="border-radius:100%;">
+                        </div>
+                        <div class="post-info">
+                          <p class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px">by Helen Miller</p>
+                          <p  class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px;">in <span class="is-family-sans-serif" style="font-size: 12px;color:#00FF99">Feature</span></p>
+                        </div>
+                        </div>
+                        <div class="poster-info-section3-info is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin-left: 200px;">
+                          <div class="comments is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="message-circle"></i>
+                            <span>29</span>
+                          </div>
+                          <div class="likes is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="heart"></i>
+                            <span>184</span>
+                          </div>
+                        
+
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                 </div>
+                  </div>
+            </div>
+            <div class="columns is-vcentered is-flex is-flex-direction-column">
+              <div class="column ">
+                  <div class="post-section is-flex is-flex-direction-row columns is-vcentered">
+                    <div class="column is-4 is-text-centered">
+                    <div class="post has-text-centered">
+                    
+                        <img src="assets/post1.svg" alt="post1"  width="247" height="155" style="margin: 0 auto;">
+                      
+                    </div>
+                   </div>
+                  
+                      <div class="column is-5" style="width: 564px;">
+                      <div class="poster-info">
+                       <div class="poster-info-section1 is-flex is-flex-direction-row">  
+                         <div class="poster-info-title-section1 has-text-white has-text-weight-medium">
+                          <p style="font-size: 19px;">The Krypton chain algorythm</p>
+                         </div>
+                         <div class="poster-info-title-section2 has-text-white has-text-weight-medium">
+                          <span style="font-size: 12px; margin: 0 0 0 20px;">15.04.2020</span>
+                         </div>
+                      </div>
+                      <div class="poster-info-section2">
+                        <p class="is-family-sans-serif" style="font-size:14px; margin:0 0 14px 0; color:rgba(94,147,255,.9);">
+                          Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır
+                          metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının
+                          bir hurufat numune kitabı...
+                        </p>
+                      </div>
+                      <div class="poster-info-section3  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="height: 32px; width:523px">
+                        <div class="poster-info-section3-img  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center">
+                          <div class="post-img">
+                          <img src="assets/person/joshua.jpg" alt="person" width="32" height="32" style="border-radius:100%;">
+                        </div>
+                        <div class="post-info">
+                          <p class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px">by John Cambell</p>
+                          <p  class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px;">in <span class="is-family-sans-serif" style="font-size: 12px;color:#00FF99">Blockchain</span></p>
+                        </div>
+                        </div>
+                        <div class="poster-info-section3-info is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin-left: 200px;">
+                          <div class="comments is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="message-circle"></i>
+                            <span>7</span>
+                          </div>
+                          <div class="likes is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="heart"></i>
+                            <span>39</span>
+                          </div>
+                        
+
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                 </div>
+                  </div>
+            </div>
+            <div class="columns is-vcentered is-flex is-flex-direction-column">
+              <div class="column ">
+                  <div class="post-section is-flex is-flex-direction-row columns is-vcentered">
+                    <div class="column is-4 is-text-centered">
+                    <div class="post has-text-centered">
+                 
+                        <img src="assets/post1.svg" alt="post1"  width="247" height="155" style="margin: 0 auto;">
+                     
+                    </div>
+                   </div>
+                   
+                      <div class="column is-5" style="width: 564px;">
+                      <div class="poster-info">
+                       <div class="poster-info-section1 is-flex is-flex-direction-row">  
+                         <div class="poster-info-title-section1 has-text-white has-text-weight-medium">
+                          <p style="font-size: 19px;">What is Crypto mining ?</p>
+                         </div>
+                         <div class="poster-info-title-section2 has-text-white has-text-weight-medium">
+                          <span style="font-size: 12px; margin: 0 0 0 20px;">02.04.2020</span>
+                         </div>
+                      </div>
+                      <div class="poster-info-section2">
+                        <p class="is-family-sans-serif" style="font-size:14px; margin:0 0 14px 0; color:rgba(94,147,255,.9);">
+                          Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır
+                          metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının
+                          bir hurufat numune kitabı...
+                        </p>
+                      </div>
+                      <div class="poster-info-section3  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="height: 32px; width:523px">
+                        <div class="poster-info-section3-img  is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center">
+                          <div class="post-img">
+                          <img src="assets/person/sandra.jpg" alt="person" width="32" height="32" style="border-radius:100%;">
+                        </div>
+                        <div class="post-info">
+                          <p class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px">by Sandra Bernard</p>
+                          <p  class="is-family-sans-serif" style="font-size: 12px;padding:0 10px 0 10px;">in <span class="is-family-sans-serif" style="font-size: 12px;color:#00FF99">Feature</span></p>
+                        </div>
+                        </div>
+                        <div class="poster-info-section3-info is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin-left: 200px;">
+                          <div class="comments is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="message-circle"></i>
+                            <span>31</span>
+                          </div>
+                          <div class="likes is-flex is-flex-direction-row has-text-white is-justify-content-flex-start is-align-items-center" style="margin: 0 20px;">
+                            <i data-feather="heart"></i>
+                            <span>48</span>
+                          </div>
+                        
+
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                 </div>
+                  </div>
+            </div> -->
+            <div class="my-5 has-text-centered">
+              <button class="button  is-light gradient1 has-text-white p-5 button1" style="font-size: 12px;">LOAD MORE</button>
+             </div>
+    </div>
+  </div>
+            
+  <div class="column is-3">
+    
+         
+          
+              <div class="search-widget">
+                <div class="control">
+                 
+                    <div class="control-material is-primary">      
+                      <input class="input" type="email" value="" required>
+                      <label class="label is-family-sans-serif has-text-white" style="opacity: 0.8;">Search articles</label>
+                      <i class="bar"></i>
+                    </div>
+                </div>
+            </div>   
+         
+            
+              <div class="categories-widget">
+                  <div class="widget-title">
+                      Categories
+                  </div>
+            
+                  <ul class="categories-list">
+                      <li>
+                          <a class="is-active" href="#">
+                              <span>All Posts</span>
+                              <span class="tag">53</span>
+                          </a>
+                      </li>
+                      <li><a href="#">Blockchain</a></li>
+                      <li><a href="#">Crypto Market</a></li>
+                      <li><a href="#">Cryptomining</a></li>
+                      <li><a href="#">Featured</a></li>
+                  </ul>
+              </div>
+            
+              <div class="tags-widget">
+                  <div class="widget-title">
+                      Tags
+                  </div>
+            
+                  <div class="tags">
+                      <span class="tag">Bitcoin</span>
+                      <span class="tag">Cryptocurrency</span>
+                      <span class="tag">Blockchain</span>
+                      <span class="tag">Ethereum</span>
+                  </div>
+              </div>
+            
+              <div class="archives-widget">
+                  <div class="widget-title">
+                      Archives
+                  </div>
+
+                  <div class="control">
+                    <span class="dropdown-trigger">Select Month</span> 
+                    <ul class="box dropdown-items">
+                      <li class="dropdown-item">January</li>
+                      <li class="dropdown-item">February</li>
+                      <!-- <li class="dropdown-divider"></li> -->
+                      <li class="dropdown-item">March </li>
+                      <li class="dropdown-item">April</li>
+                      <li class="dropdown-item">May</li>
+                      <li class="dropdown-item">June</li>
+                      <li class="dropdown-item">July</li>
+                      <li class="dropdown-item">August</li>
+                      <li class="dropdown-item">Septembe</li>
+                      <li class="dropdown-item">October</li>
+                      <li class="dropdown-item">November</li>
+                      <li class="dropdown-item">December</li>
+                    </ul> 
+                  </div>
+              </div>
+            
+  </div> 
+
+
+          </div>
+          </div>
+      </section>
+      <!-- end media-->
+    <!-- start Footer-->
+    <footer class="footer color1" style="background:#0F0330">
+      <div class="container">
+        <div class="footer-img has-text-centered pt-6 pb-6">
+          <a href="#">
+            <img src="assets/krypton-gradient.svg" alt="krypton-gradient" width="75" height="75" class="rotateing">
+          </a>
+          <h4 class="is-size-5 has-text-white has-text-weight-bold pt-2 pb-2 pl-0 pr-0 is-family-sans-serif">KRYPTON</h4>
+          <p class=" is-size-7 is-family-sans-serif" style="color:#7f00ff;">BLOCKCHAIN BROUGHT TO ANOTHER LEVEL</p>
+        </div>
+        <div class="columns is-vcentered">
+          <div class="column is-4">
+            <div class="footer-list">
+            <ul class="list is-flex is-flex is-justify-content-center is-align-content-center">
+              <li class="list-item"><a href="#">TOKEN</a></li>
+              <li  class="list-item"><a href="#">ICO</a></li>
+              <li  class="list-item"><a href="#">ROADMAP</a></li>
+            </ul>
+          </div>
+          </div>
+          <div class="column is-4">
+            <div class="subscribe">
+              <form class="subscribe-form">
+                
+                  <div class="control form-control is-vcentered" style="  border: 1px solid rgba(0, 83, 251, 0.5);
+                  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5), 0 0 25px 0 rgba(18, 60, 255, 0.16);
+                  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5), 0 0 25px 0 rgba(18, 60, 255, 0.16);    background: rgba(17, 149, 247, 0.08);">
+                    <input class="input " type="email" placeholder>
+                    <!-- <button class="button is-link is-rounded">SUBSCRIBE</button> -->
+                    <button class="button  is-rounded gradient2 p-4 is-size-6 has-text-white" style="border:none;">SUBSCRIBE</button> 
+                  </div>
+              </form>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="footer-list">
+              <ul class="list is-flex is-flex is-justify-content-center is-align-content-center">
+                <li class="list-item"><a href="#">REGISTER</a></li>
+                <li  class="list-item"><a href="media.html">MEDIA</a></li>
+                <li  class="list-item"><a href="#">TELEGRAM</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-end has-text-centered">
+        <p class="footer-copy is-size-7 is-family-sans-serif p-5 pb-5" style="color:#7f00ff;">© 2018-2021 | Krypton. All Rights Reserved</p>
+        <p class="footer-design is-size-7 has-text-white is-family-sans-serif">Designed and Coded by
+          <a href="#" style="color:#00FF99"> Css Ninja</a>
+        </p>
+      </div>
+      </div>
+      <img src="assets/solar.svg" alt="solar" class="img-solar">
+    </footer>
+      <!-- end Footer-->
+      <script>
+
+        $(document).ready(function() {
+
+        // Check for click events on the navbar burger icon
+        $(".navbar-burger").click(function() {
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+
+        });
+        });
+// start select js
+      var trigger = document.querySelector(".dropdown-trigger");
+
+      trigger.addEventListener("click", function(event) {
+       document.querySelector(".dropdown-items").classList.toggle("is-open");
+      });
+// end select js
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js "></script>
+
+<!-- start vue framework -->
+<script type="module">
+  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+  createApp({
+    data() {
+      return {
+        listItems: [],
+        listUsersItems: []
+        // listPhotoItems: []
+      }
+    },
+    methods: {
+      async getPost() {
+        const res1 = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const finalRes = await res1.json();
+        this.listItems = finalRes;
+      },
+      async getUsers() {
+        const res2 = await fetch("https://jsonplaceholder.typicode.com/users");
+        const finalUserRes = await res2.json();
+        this.listUsersItems =finalUserRes;
+      },
+      // async getPhotos() {
+      //   const res3 = await fetch("https://www.breakingbadapi.com/api/characters?limit=2");
+      //   const finalPhotoRes = await res3.json();
+      //   this.listPhotoItems =finalPhotoRes;
+      // }
+    },
+    created() {
+      this.getPost() 
+      this.getUsers()
+      // this.getPhotos()
+      
+    }}).mount('#template')
+</script>
+<!-- end vue framework -->
+</body>
+</html>
+
+

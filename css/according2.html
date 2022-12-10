@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>according</title>
+    <style>
+        /* start */
+    .faq-according{
+    border: 1px solid rgba(0,83,251,.5);
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 50%), 0 0 25px 0 rgb(18 60 255 / 16%);
+    background-color: #1c004c !important;
+    padding: 10px;
+    display: block;
+    
+}
+ .faq-according .faq-according-header{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    height: 50px !important;
+    width: 464px !important;
+    padding: 14px !important;
+}
+ .faq-according .faq-according-body{
+font-size: 14px !important;
+    color:#5e93ff !important;
+    padding: 7px 14px 14px 14px !important;
+}
+        /* end */
+        .accordion_container {
+      width: 500px;
+    }
+    
+    /* .accordion_head {
+      background-color: skyblue;
+      color: white;
+      cursor: pointer;
+      font-family: arial;
+      font-size: 14px;
+      margin: 0 0 1px 0;
+      padding: 7px 11px;
+      font-weight: bold;
+    }
+    
+    .accordion_body {
+      background: lightgray;
+    } */
+    
+    .accordion_body p {
+      padding: 18px 5px;
+      margin: 0px;
+    }
+    
+    .plusminus {
+      float: right;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="accordion_container  faq-according">
+        <div class="accordion_head faq-according-header"> What is Blockchain ?<span class="plusminus">+</span></div>
+        <div class="accordion_body faq-according-body" style="display: none;">
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="accordion_head">Second Accordian Head<span class="plusminus">+</span></div>
+        <div class="accordion_body" style="display: none;">
+          <p>Second Accordian Body, it will have description</p>
+        </div>
+        <div class="accordion_head">Third Accordian Head<span class="plusminus">+</span></div>
+        <div class="accordion_body" style="display: none;">
+          <p>Third Accordian Body, it will have description</p>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js "></script>
+      <script>
+        $(document).ready(function() {
+          //toggle the component with class accordion_body
+          $(".accordion_head").click(function() {
+            if ($('.accordion_body').is(':visible')) {
+              $(".accordion_body").slideUp(300);
+              $(".plusminus").text('+');
+            }
+            if ($(this).next(".accordion_body").is(':visible')) {
+              $(this).next(".accordion_body").slideUp(300);
+              $(this).children(".plusminus").text('+');
+            } else {
+              $(this).next(".accordion_body").slideDown(300);
+              $(this).children(".plusminus").text('-');
+            }
+          });
+        });
+      </script> 
+</body>
+</html>
